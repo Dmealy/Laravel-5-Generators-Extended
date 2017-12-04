@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Laracasts\Generators\Migrations;
+namespace spec\DMealy\CiviGenerator\Migrations;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class SyntaxBuilderSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Laracasts\Generators\Migrations\SyntaxBuilder');
+        $this->shouldHaveType('DMealy\CiviGenerator\Migrations\SyntaxBuilder');
     }
 
     function it_creates_the_php_syntax_for_the_schema()

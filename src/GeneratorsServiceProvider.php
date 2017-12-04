@@ -1,6 +1,6 @@
 <?php
 
-namespace Laracasts\Generators;
+namespace DMealy\CiviGenerators;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -25,6 +25,7 @@ class GeneratorsServiceProvider extends ServiceProvider
     {
         $this->registerSeedGenerator();
         $this->registerMigrationGenerator();
+        $this->registerCiviMigrationGenerator();
         $this->registerPivotMigrationGenerator();
     }
 
@@ -34,7 +35,7 @@ class GeneratorsServiceProvider extends ServiceProvider
     private function registerSeedGenerator()
     {
         $this->app->singleton('command.laracasts.seed', function ($app) {
-            return $app['Laracasts\Generators\Commands\SeedMakeCommand'];
+            return $app['DMealy\CiviGenerators\Commands\SeedMakeCommand'];
         });
 
         $this->commands('command.laracasts.seed');
@@ -46,10 +47,22 @@ class GeneratorsServiceProvider extends ServiceProvider
     private function registerMigrationGenerator()
     {
         $this->app->singleton('command.laracasts.migrate', function ($app) {
-            return $app['Laracasts\Generators\Commands\MigrationMakeCommand'];
+            return $app['DMealy\CiviGenerators\Commands\MigrationMakeCommand'];
         });
 
         $this->commands('command.laracasts.migrate');
+    }
+
+    /**
+     * Register the make:migration:civi generator.
+     */
+    private function registerCiviMigrationGenerator()
+    {
+        $this->app->singleton('command.dmealy.migrate.civi', function ($app) {
+            return $app['DMealy\CiviGenerators\Commands\CiviMigrationMakeCommand'];
+        });
+
+        $this->commands('command.dmealy.migrate.civi');
     }
 
     /**
@@ -58,7 +71,7 @@ class GeneratorsServiceProvider extends ServiceProvider
     private function registerPivotMigrationGenerator()
     {
         $this->app->singleton('command.laracasts.migrate.pivot', function ($app) {
-            return $app['Laracasts\Generators\Commands\PivotMigrationMakeCommand'];
+            return $app['DMealy\CiviGenerators\Commands\PivotMigrationMakeCommand'];
         });
 
         $this->commands('command.laracasts.migrate.pivot');

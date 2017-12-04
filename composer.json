@@ -1,12 +1,16 @@
 {
-  "name": "laracasts/generators",
-  "description": "Extend Laravel 5's generators.",
+  "name": "dmealy/laravel-civi-generators",
+  "description": "Add civi migration generators.",
   "keywords": ["laravel", "generators"],
   "license": "MIT",
   "authors": [
     {
       "name": "Jeffrey Way",
       "email": "jeffrey@laracasts.com"
+    },
+    {
+      "name": "David Mealy",
+      "email": "dmealy@urbics.com"
     }
   ],
   "require": {
@@ -18,13 +22,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Laracasts\\Generators\\": "src/"
+      "DMealy\\CiviGenerators\\": "src/"
     }
   },
   "extra": {
       "laravel": {
           "providers": [
-              "Laracasts\\Generators\\GeneratorsServiceProvider"
+              "DMealy\\CiviGenerators\\GeneratorsServiceProvider"
           ]
       }
   }

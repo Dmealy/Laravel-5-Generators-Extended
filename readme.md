@@ -1,16 +1,15 @@
-# Laravel 5 Extended Generators
+# Laravel Civi Generators
 
-[![Build Status](https://travis-ci.org/laracasts/Laravel-5-Generators-Extended.svg?branch=master)](https://travis-ci.org/laracasts/Laravel-5-Generators-Extended)
+An extention of the Laracasts Laravel-5-Generators-Extended package, extended further to allow migration of the civi xml schema from civicrm/civicrm-core.  The package is intended for Laravel 5.
 
-If you're familiar with my [Laravel 4 Generators](https://github.com/JeffreyWay/Laravel-4-Generators), then this is basically the same thing - just upgraded for Laravel 5.
+The package adds the following commands:
+- `make:migration:civi`
+- `make:seed:civi`
 
-L5 includes a bunch of generators out of the box, so this package only needs to add a few things, like:
-
+to these commands included from the Laravel-5-Generators-Extended package:
 - `make:migration:schema`
 - `make:migration:pivot`
 - `make:seed`
-
-*With one or two more to come.*
 
 
 ## Usage on Laravel 5.5
@@ -18,7 +17,7 @@ L5 includes a bunch of generators out of the box, so this package only needs to 
 ### Step 1: Install Through Composer
 
 ```
-composer require laracasts/generators --dev
+composer require dmealy/laravel-civi-generators --dev
 ```
 
 ### Step 2: Run Artisan!
@@ -31,7 +30,7 @@ You're all set. Run `php artisan` from the console, and you'll see the new comma
 ### Step 1: Install Through Composer
 
 ```
-composer require laracasts/generators --dev
+composer require dmealy/laravel-civi-generators --dev
 ```
 
 ### Step 2: Add the Service Provider
@@ -42,7 +41,7 @@ You'll only want to use these generators for local development, so you don't wan
 public function register()
 {
 	if ($this->app->environment() == 'local') {
-		$this->app->register('Laracasts\Generators\GeneratorsServiceProvider');
+		$this->app->register('DMealy\CiviGenerator\GeneratorsServiceProvider');
 	}
 }
 ```
@@ -53,6 +52,7 @@ public function register()
 You're all set. Run `php artisan` from the console, and you'll see the new commands in the `make:*` namespace section.
 
 ## Examples
+- [Migrations With Civi XML Schema](#migrations-with-civi)
 
 - [Migrations With Schema](#migrations-with-schema)
 - [Pivot Tables](#pivot-tables)

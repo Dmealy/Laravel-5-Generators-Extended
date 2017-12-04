@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\Laracasts\Generators\Migrations;
+namespace spec\DMealy\CiviGenerator\Migrations;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
@@ -9,7 +9,7 @@ class NameParserSpec extends ObjectBehavior
 {
     function it_is_initializable()
     {
-        $this->shouldHaveType('Laracasts\Generators\Migrations\NameParser');
+        $this->shouldHaveType('DMealy\CiviGenerator\Migrations\NameParser');
     }
 
     function it_parses_a_migration_name_into_an_array()

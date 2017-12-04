@@ -1,8 +1,8 @@
 <?php
 
-namespace Laracasts\Generators\Migrations;
+namespace DMealy\CiviGenerator\Migrations;
 
-use Laracasts\Generators\GeneratorException;
+use DMealy\CiviGenerator\GeneratorException;
 
 class SyntaxBuilder
 {

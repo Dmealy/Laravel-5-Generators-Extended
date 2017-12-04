@@ -11,21 +11,21 @@ use DMealy\CiviGenerator\Migrations\SyntaxBuilder;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-class MigrationMakeCommand extends Command
+class CiviMigrationMakeCommand extends Command
 {
     /**
      * The console command name.
      *
      * @var string
      */
-    protected $name = 'make:migration:schema';
+    protected $name = 'make:migration:civi';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Create a new migration class and apply schema at the same time';
+    protected $description = 'Create a new migration class and apply civi xml schema.';
 
     /**
      * The filesystem instance.

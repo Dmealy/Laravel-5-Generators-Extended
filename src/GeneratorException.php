@@ -1,6 +1,6 @@
 <?php
 
-namespace Laracasts\Generators;
+namespace DMealy\CiviGenerator;
 
 class GeneratorException extends \Exception
 {
